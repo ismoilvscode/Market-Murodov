@@ -233,6 +233,7 @@ body.is-admin-route .back-link{ display: inline-block; }
   justify-content: center;
 }
 .login-screen.is-hidden{ display: none; }
+#admin-panel.is-hidden{ display: none; }
 .login-card{
   width: min(360px, 100%);
   background: var(--bg-dark-alt);
