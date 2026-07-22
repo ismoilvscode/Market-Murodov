@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marketa &mdash; Website Template Marketplace</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar">
+  <div class="navbar__inner">
+    <div class="brand">
+      <span class="brand__mark">
+        <span class="dot dot--red"></span>
+        <span class="dot dot--yellow"></span>
+        <span class="dot dot--green"></span>
+      </span>
+      <span class="brand__name">Marketa</span>
+    </div>
+
+    <nav class="navbar__links">
+      <span class="route-badge" id="routeBadge" data-i18n="nav.adminBadge">Admin mode</span>
+      <a href="#/" class="back-link" id="backToStoreLink" data-i18n="nav.backToStore">&larr; Back to storefront</a>
+    </nav>
+
+    <div class="lang-switch">
+      <span class="lang-switch__icon" aria-hidden="true">&#127760;</span>
+      <select id="langSelect" aria-label="Language selector">
+        <option value="en">EN &mdash; English</option>
+        <option value="ru">RU &mdash; Русский</option>
+        <option value="tj">TJ &mdash; Тоҷикӣ</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CLIENT VIEW (default, visible route) ============ -->
+<div id="clientView" class="route-view">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__inner">
+      <p class="hero__eyebrow" data-i18n="hero.eyebrow">01001101 &mdash; template exchange</p>
+      <h1 class="hero__title">
+        <span data-i18n="hero.title1">Ship a website</span><br/>
+        <span class="hero__title--accent" data-i18n="hero.title2">before your coffee cools.</span>
+      </h1>
+      <p class="hero__subtitle" data-i18n="hero.subtitle">
+        Browse ready-made templates below. Preview any of them live, then reach the seller on WhatsApp or Telegram in one tap.
+      </p>
+    </div>
+  </section>
+
+  <!-- CLIENT SHOWCASE -->
+  <section class="section section--light" id="showcase">
+    <div class="section__inner">
+
+      <div class="section__head">
+        <span class="section__index section__index--dark">/ 01</span>
+        <div>
+          <h2 class="section__title section__title--dark" data-i18n="showcase.heading">Storefront</h2>
+          <p class="section__desc section__desc--dark" data-i18n="showcase.subheading">Live inventory of every template that's been published.</p>
+        </div>
+      </div>
+
+      <div id="emptyState" class="empty-state">
+        <div class="empty-state__glyph">&lt;/&gt;</div>
+        <h3 class="empty-state__title" data-i18n="showcase.empty.title">No active websites yet</h3>
+        <p class="empty-state__text" data-i18n="showcase.empty.text">Check back soon &mdash; new templates are added regularly.</p>
+      </div>
+
+      <div class="card-grid" id="cardGrid">
+        <!-- injected cards -->
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p data-i18n="footer.text">Marketa &mdash; a lightweight template exchange. All data stored locally in your browser.</p>
+  </footer>
+
+</div>
+
+<!-- ============ ADMIN VIEW (hidden, only via #/admin) ============ -->
+<div id="adminView" class="route-view route-view--admin is-hidden">
+
+  <!-- Login gate -->
+  <section class="section section--dark login-screen" id="adminLogin">
+    <div class="login-card">
+      <div class="console-card__titlebar">
+        <span class="console-card__label" data-i18n="login.title">Admin sign-in</span>
+      </div>
+      <div class="console-card__body">
+        <p class="field-hint" data-i18n="login.hint">Enter your admin credentials to continue.</p>
+
+        <label class="field">
+          <span data-i18n="login.username">Email</span>
+          <input type="email" id="loginUsername" autocomplete="email" />
+        </label>
+
+        <label class="field">
+          <span data-i18n="login.password">Password</span>
+          <input type="password" id="loginPassword" autocomplete="current-password" />
+        </label>
+
+        <button class="btn btn--primary login-card__submit" id="loginSubmitBtn" data-i18n="login.submit">Sign in</button>
+        <p class="login-error" id="loginError" data-i18n="login.error">Incorrect username or password.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authenticated admin console -->
+  <section class="section section--dark is-hidden" id="admin-panel">
+  <div class="section__inner">
+
+    <div class="section__head">
+      <span class="section__index">/ 01</span>
+      <div>
+        <h2 class="section__title" data-i18n="admin.heading">Admin Console</h2>
+        <p class="section__desc" data-i18n="admin.subheading">Publish new templates and manage your storefront contact links.</p>
+      </div>
+      <button class="btn btn--ghost logout-btn" id="logoutBtn" data-i18n="login.logout">Log out</button>
+    </div>
+
+    <div class="console-grid">
+
+      <!-- Contact settings card -->
+      <div class="console-card">
+        <div class="console-card__titlebar">
+          <span class="console-card__label" data-i18n="admin.contact.title">Store Contact</span>
+        </div>
+        <div class="console-card__body">
+          <p class="field-hint" data-i18n="admin.contact.hint">Used by every "WhatsApp" and "Telegram" button on your storefront.</p>
+
+          <label class="field">
+            <span data-i18n="admin.contact.whatsapp">WhatsApp number (with country code)</span>
+            <input type="text" id="ownerWhatsapp" placeholder="+992 90 123 4567" />
+          </label>
+
+          <label class="field">
+            <span data-i18n="admin.contact.telegram">Telegram username</span>
+            <input type="text" id="ownerTelegram" placeholder="@marketa_store" />
+          </label>
+
+          <button class="btn btn--ghost" id="saveContactBtn" data-i18n="admin.contact.save">Save contact info</button>
+          <p class="save-note" id="contactSavedNote" data-i18n="admin.contact.saved">Saved.</p>
+        </div>
+      </div>
+
+      <!-- New template editor card -->
+      <div class="console-card console-card--wide">
+        <div class="console-card__titlebar">
+          <span class="console-card__label" data-i18n="admin.form.title">New Template</span>
+        </div>
+        <div class="console-card__body">
+
+          <div class="field-row">
+            <label class="field">
+              <span data-i18n="admin.form.name">Website title</span>
+              <input type="text" id="siteTitle" data-i18n-placeholder="admin.form.namePlaceholder" placeholder="Aurora Portfolio" />
+            </label>
+            <label class="field field--narrow">
+              <span data-i18n="admin.form.price">Price (TJS)</span>
+              <input type="number" id="sitePrice" min="0" placeholder="450" />
+            </label>
+          </div>
+
+          <div class="editor-tabs" role="tablist">
+            <button class="editor-tab is-active" data-tab="html" role="tab">
+              <span class="tab-dot tab-dot--html"></span> HTML
+            </button>
+            <button class="editor-tab" data-tab="css" role="tab">
+              <span class="tab-dot tab-dot--css"></span> CSS
+            </button>
+            <button class="editor-tab" data-tab="js" role="tab">
+              <span class="tab-dot tab-dot--js"></span> JS
+            </button>
+          </div>
+
+          <div class="editor-panes">
+            <textarea class="editor-pane is-active" id="codeHtml" data-tab-pane="html" spellcheck="false" placeholder="<section>&#10;  <h1>Hello world</h1>&#10;</section>"></textarea>
+            <textarea class="editor-pane" id="codeCss" data-tab-pane="css" spellcheck="false" placeholder="h1 { color: #5B8DEF; }"></textarea>
+            <textarea class="editor-pane" id="codeJs" data-tab-pane="js" spellcheck="false" placeholder="console.log('template loaded');"></textarea>
+          </div>
+
+          <div class="console-card__actions">
+            <button class="btn btn--primary" id="publishBtn" data-i18n="admin.form.publish">Save and publish</button>
+            <span class="publish-note" id="publishNote"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Manage published list -->
+    <div class="manage-list" id="manageList">
+      <h3 class="manage-list__title" data-i18n="admin.manage.title">Published templates</h3>
+      <div class="manage-list__items" id="manageListItems">
+        <!-- injected rows -->
+      </div>
+    </div>
+
+  </div>
+  </section>
+</div>
+
+
+<!-- ============ PREVIEW MODAL ============ -->
+<div class="modal-overlay" id="previewModal">
+  <div class="modal">
+    <div class="modal__topbar">
+      <span class="brand__mark">
+        <span class="dot dot--red"></span>
+        <span class="dot dot--yellow"></span>
+        <span class="dot dot--green"></span>
+      </span>
+      <span class="modal__title" id="modalTitle">Live Preview</span>
+      <button class="modal__close" id="modalCloseBtn" aria-label="Close preview">&times;</button>
+    </div>
+    <iframe id="previewFrame" class="modal__frame" title="Live template preview" sandbox="allow-scripts allow-same-origin"></iframe>
+  </div>
+</div>
+
+<!-- Firebase (Firestore) — lets admin-published templates appear live for every visitor -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="firebase-config.js"></script>
+
+<script src="app.js"></script>
+</body>
+</html>
