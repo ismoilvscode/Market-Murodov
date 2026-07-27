@@ -9,11 +9,11 @@
       'nav.adminBadge': 'Admin mode',
       'nav.backToStore': '← Back to storefront',
       'login.title': 'Admin sign-in',
-      'login.hint': 'Enter your admin credentials to continue.',
-      'login.username': 'Username',
+      'login.hint': 'Enter your admin email and password to continue.',
+      'login.username': 'Email',
       'login.password': 'Password',
       'login.submit': 'Sign in',
-      'login.error': 'Incorrect username or password.',
+      'login.error': 'Incorrect email or password.',
       'login.logout': 'Log out',
       'hero.eyebrow': '01001101 — template exchange',
       'hero.title1': 'Ship a website',
@@ -56,11 +56,11 @@
       'nav.adminBadge': 'Режим администратора',
       'nav.backToStore': '← Назад в магазин',
       'login.title': 'Вход для администратора',
-      'login.hint': 'Введите данные администратора, чтобы продолжить.',
-      'login.username': 'Имя пользователя',
+      'login.hint': 'Введите email и пароль администратора, чтобы продолжить.',
+      'login.username': 'Email',
       'login.password': 'Пароль',
       'login.submit': 'Войти',
-      'login.error': 'Неверное имя пользователя или пароль.',
+      'login.error': 'Неверный email или пароль.',
       'login.logout': 'Выйти',
       'hero.eyebrow': '01001101 — обмен шаблонами',
       'hero.title1': 'Запускайте сайт',
@@ -103,11 +103,11 @@
       'nav.adminBadge': 'Реҷаи админ',
       'nav.backToStore': '← Бозгашт ба мағоза',
       'login.title': 'Воридшавии админ',
-      'login.hint': 'Барои идома додан маълумоти воридшавии худро ворид кунед.',
-      'login.username': 'Номи корбар',
+      'login.hint': 'Барои идома додан email ва пароли админро ворид кунед.',
+      'login.username': 'Email',
       'login.password': 'Парол',
       'login.submit': 'Ворид шудан',
-      'login.error': 'Номи корбар ё парол нодуруст аст.',
+      'login.error': 'Email ё парол нодуруст аст.',
       'login.logout': 'Баромадан',
       'hero.eyebrow': '01001101 — мубодилаи шаблон',
       'hero.title1': 'Сомонаро оғоз кунед',
@@ -372,6 +372,11 @@
       publishNote.style.color = 'var(--accent-green)';
       publishNote.classList.add('is-visible');
       setTimeout(() => publishNote.classList.remove('is-visible'), 2500);
+
+      // Send the admin straight back to the main storefront so the
+      // freshly published card (and its Live Preview / WhatsApp /
+      // Telegram buttons) is right there, ready to test.
+      setTimeout(() => { window.location.hash = '#/'; }, 900);
     } catch (err) {
       console.error('Publish failed:', err);
       publishNote.textContent = t('admin.form.errorFields');
@@ -458,6 +463,28 @@
 </head>
 <body>
 ${tpl.html || ''}
+<script>
+// Keep this preview fully self-contained. Without this, a link like
+// href="#menu" resolves against the REAL site's URL (a quirk of
+// srcdoc iframes) and ends up loading the actual marketplace page
+// inside the preview. So: in-page anchors just scroll within the
+// preview itself, and every other link is inert — a preview should
+// never navigate anywhere, including back out to the real site.
+(function () {
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    if (href.charAt(0) === '#' && href.length > 1) {
+      var target = document.getElementById(href.slice(1));
+      if (target && target.scrollIntoView) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    e.preventDefault();
+  }, true);
+})();
+<\/script>
 <script>${tpl.js || ''}<\/script>
 </body>
 </html>`;
@@ -481,7 +508,7 @@ ${tpl.html || ''}
       card.innerHTML = `
         <div class="card__thumb" data-action="thumb" role="button" tabindex="0" aria-label="${t('card.preview')}">
           <div class="card__thumb-frame-wrap">
-            <iframe class="card__thumb-frame" sandbox="allow-scripts" tabindex="-1" aria-hidden="true" loading="lazy"></iframe>
+            <iframe class="card__thumb-frame" sandbox="allow-scripts" referrerpolicy="no-referrer" tabindex="-1" aria-hidden="true" loading="lazy"></iframe>
           </div>
           <div class="card__thumb-chrome">
             <span class="dot dot--red"></span>
