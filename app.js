@@ -36,7 +36,32 @@
       'admin.form.errorFields': 'Please fill in the title, price and at least the HTML code.',
       'admin.manage.title': 'Published templates',
       'admin.manage.empty': 'Nothing published yet — your new template will show up here.',
+      'admin.manage.edit': 'Edit',
       'admin.manage.delete': 'Delete',
+      'admin.form.update': 'Save changes',
+      'admin.form.cancelEdit': 'Cancel edit',
+      'admin.form.updatedNote': 'Changes saved.',
+      'admin.orders.title': 'Incoming orders',
+      'admin.orders.empty': 'No custom orders yet.',
+      'admin.orders.handle': 'Mark handled',
+      'admin.orders.delete': 'Delete',
+      'order.heading': 'Order a custom site',
+      'order.subheading': "Don't see what you need? Describe it and it goes straight to the seller.",
+      'order.name': 'Your name',
+      'order.namePlaceholder': 'Aziz',
+      'order.budget': 'Budget (TJS)',
+      'order.budgetPlaceholder': '500',
+      'order.phone': 'Phone number',
+      'order.phonePlaceholder': '+992 90 123 4567',
+      'order.telegram': 'Telegram username',
+      'order.telegramPlaceholder': '@aziz',
+      'order.message': 'What kind of site do you need?',
+      'order.messagePlaceholder': 'E.g. a landing page for my cafe, with a menu and an order button...',
+      'order.hint': 'Fill in at least one contact — phone or Telegram.',
+      'order.submit': 'Send order',
+      'order.success': 'Sent! The seller will reach out to you shortly.',
+      'order.errorFields': 'Please fill in your name, a phone or Telegram, and a short description.',
+      'order.error': 'Something went wrong — please try again.',
       'showcase.heading': 'Storefront',
       'showcase.subheading': "Live inventory of every template that's been published.",
       'showcase.empty.title': 'No active websites yet',
@@ -83,7 +108,32 @@
       'admin.form.errorFields': 'Заполните название, цену и хотя бы HTML-код.',
       'admin.manage.title': 'Опубликованные шаблоны',
       'admin.manage.empty': 'Пока ничего не опубликовано — новый шаблон появится здесь.',
+      'admin.manage.edit': 'Изменить',
       'admin.manage.delete': 'Удалить',
+      'admin.form.update': 'Сохранить изменения',
+      'admin.form.cancelEdit': 'Отменить редактирование',
+      'admin.form.updatedNote': 'Изменения сохранены.',
+      'admin.orders.title': 'Новые заказы',
+      'admin.orders.empty': 'Пока нет заказов на индивидуальный сайт.',
+      'admin.orders.handle': 'Отметить как обработан',
+      'admin.orders.delete': 'Удалить',
+      'order.heading': 'Заказать сайт под себя',
+      'order.subheading': 'Не нашли то, что нужно? Опишите — и заявка уйдёт прямо продавцу.',
+      'order.name': 'Ваше имя',
+      'order.namePlaceholder': 'Азиз',
+      'order.budget': 'Бюджет (TJS)',
+      'order.budgetPlaceholder': '500',
+      'order.phone': 'Номер телефона',
+      'order.phonePlaceholder': '+992 90 123 4567',
+      'order.telegram': 'Имя пользователя Telegram',
+      'order.telegramPlaceholder': '@aziz',
+      'order.message': 'Какой сайт вам нужен?',
+      'order.messagePlaceholder': 'Например: лендинг для моего кафе с меню и кнопкой заказа...',
+      'order.hint': 'Укажите хотя бы один контакт — телефон или Telegram.',
+      'order.submit': 'Отправить заказ',
+      'order.success': 'Отправлено! Продавец скоро свяжется с вами.',
+      'order.errorFields': 'Заполните имя, телефон или Telegram, и краткое описание.',
+      'order.error': 'Что-то пошло не так — попробуйте ещё раз.',
       'showcase.heading': 'Витрина',
       'showcase.subheading': 'Актуальный список всех опубликованных шаблонов.',
       'showcase.empty.title': 'Пока нет активных сайтов',
@@ -130,7 +180,32 @@
       'admin.form.errorFields': 'Лутфан унвон, нарх ва ҳадди ақал коди HTML-ро пур кунед.',
       'admin.manage.title': 'Шаблонҳои нашршуда',
       'admin.manage.empty': 'То ҳол чизе нашр нашудааст — шаблони нави шумо дар ин ҷо намоён мешавад.',
+      'admin.manage.edit': 'Тағйир додан',
       'admin.manage.delete': 'Нест кардан',
+      'admin.form.update': 'Захираи тағйирот',
+      'admin.form.cancelEdit': 'Бекор кардани таҳрир',
+      'admin.form.updatedNote': 'Тағйирот захира шуд.',
+      'admin.orders.title': 'Фармоишҳои нав',
+      'admin.orders.empty': 'То ҳол фармоиши фардӣ нест.',
+      'admin.orders.handle': 'Иҷрошуда қайд кардан',
+      'admin.orders.delete': 'Нест кардан',
+      'order.heading': 'Сомонаи фардиро фармоиш диҳед',
+      'order.subheading': 'Чизи даркориро наёфтед? Тасвир кунед — дархост рост ба фурӯшанда меравад.',
+      'order.name': 'Номи шумо',
+      'order.namePlaceholder': 'Азиз',
+      'order.budget': 'Буҷа (TJS)',
+      'order.budgetPlaceholder': '500',
+      'order.phone': 'Рақами телефон',
+      'order.phonePlaceholder': '+992 90 123 4567',
+      'order.telegram': 'Номи корбарии Telegram',
+      'order.telegramPlaceholder': '@aziz',
+      'order.message': 'Чӣ хел сомона лозим аст?',
+      'order.messagePlaceholder': 'Масалан: лендинги кафеи ман бо меню ва тугмаи фармоиш...',
+      'order.hint': 'Ҳадди ақал як тамос пур кунед — телефон ё Telegram.',
+      'order.submit': 'Фиристодани фармоиш',
+      'order.success': 'Фиристода шуд! Фурӯшанда ба зудӣ бо шумо тамос мегирад.',
+      'order.errorFields': 'Лутфан ном, телефон ё Telegram, ва тавсифи кӯтоҳро пур кунед.',
+      'order.error': 'Хатое рух дод — лутфан бори дигар кӯшиш кунед.',
       'showcase.heading': 'Витрина',
       'showcase.subheading': 'Рӯйхати зиндаи ҳамаи шаблонҳои нашршуда.',
       'showcase.empty.title': 'То ҳол сомонаи фаъол нест',
@@ -161,7 +236,18 @@
     lang: localStorage.getItem(STORAGE_KEYS.lang) || 'en',
     templates: [],
     contact: { whatsapp: '', telegram: '' },
+    orders: [],
   };
+
+  // Set while the admin is editing an existing template (via the
+  // "Edit" button in the manage list) instead of publishing a new
+  // one. See enterEditMode()/exitEditMode() further down.
+  let editingTemplateId = null;
+
+  // Holds the Firestore unsubscribe function for the live orders
+  // listener, so it can be detached on logout (orders are only
+  // readable while signed in — see firebase-config.js rules).
+  let ordersUnsubscribe = null;
 
   /* =========================================================
      STORAGE HELPERS (Firestore — shared across all visitors)
@@ -174,6 +260,7 @@
   ========================================================= */
   const TEMPLATES_COLLECTION = 'templates';
   const CONTACT_DOC = 'settings/contact';
+  const ORDERS_COLLECTION = 'orders';
 
   function getDb() {
     if (!window.db) {
@@ -224,6 +311,83 @@
   }
 
   /* =========================================================
+     CUSTOM ORDERS
+     ---------------------------------------------------------
+     Anyone can create an order (write-only for non-admins, per
+     firebase-config.js rules); only the signed-in admin can
+     read/update/delete them, so this listener only ever runs
+     while authenticated (see showAdminConsole()/logout()).
+  ========================================================= */
+  async function createOrderRemote(order) {
+    const db = getDb();
+    if (!db) throw new Error('Firestore is not initialized');
+    await db.collection(ORDERS_COLLECTION).doc(order.id).set(order);
+  }
+
+  function subscribeToOrders() {
+    const db = getDb();
+    if (!db || ordersUnsubscribe) return;
+    ordersUnsubscribe = db.collection(ORDERS_COLLECTION)
+      .orderBy('createdAt', 'desc')
+      .onSnapshot((snapshot) => {
+        state.orders = snapshot.docs.map((doc) => doc.data());
+        renderOrdersList();
+      }, (err) => console.error('Orders sync error:', err));
+  }
+
+  function unsubscribeFromOrders() {
+    if (ordersUnsubscribe) {
+      ordersUnsubscribe();
+      ordersUnsubscribe = null;
+    }
+    state.orders = [];
+    renderOrdersList();
+  }
+
+  async function setOrderHandledRemote(id) {
+    const db = getDb();
+    if (!db) return;
+    await db.collection(ORDERS_COLLECTION).doc(id).update({ status: 'handled' });
+  }
+
+  async function deleteOrderRemote(id) {
+    const db = getDb();
+    if (!db) return;
+    await db.collection(ORDERS_COLLECTION).doc(id).delete();
+  }
+
+  // Best-effort ping to the admin's Telegram — see step 6 in
+  // firebase-config.js for setup. Orders are already durably
+  // saved in Firestore by the time this runs, so a network hiccup
+  // or an unconfigured bot here never loses an order; it just
+  // means the admin finds out from the Admin Console instead of
+  // instantly on their phone.
+  async function notifyTelegram(order) {
+    const token = window.TELEGRAM_BOT_TOKEN;
+    const chatId = window.TELEGRAM_CHAT_ID;
+    if (!token || !chatId || token.indexOf('PUT_YOUR_') === 0 || chatId.indexOf('PUT_YOUR_') === 0) {
+      return; // Telegram not configured — order still lives in Firestore/Admin Console.
+    }
+    const lines = [
+      '🆕 New order — Murodov Marketa',
+      `Name: ${order.name}`,
+    ];
+    if (order.phone) lines.push(`Phone: ${order.phone}`);
+    if (order.telegram) lines.push(`Telegram: ${order.telegram}`);
+    if (order.budget) lines.push(`Budget: ${order.budget} TJS`);
+    lines.push(`Message: ${order.message}`);
+    try {
+      await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: chatId, text: lines.join('\n') }),
+      });
+    } catch (err) {
+      console.error('Telegram notification failed (order is still saved):', err);
+    }
+  }
+
+  /* =========================================================
      I18N ENGINE
   ========================================================= */
   function t(key) {
@@ -240,6 +404,7 @@
     });
     document.getElementById('modalTitle').textContent = t('modal.title');
     renderManageList();
+    renderOrdersList();
     renderCards();
   }
 
@@ -259,6 +424,19 @@
   const codeJs = document.getElementById('codeJs');
   const publishBtn = document.getElementById('publishBtn');
   const publishNote = document.getElementById('publishNote');
+  const cancelEditBtn = document.getElementById('cancelEditBtn');
+
+  const orderNameInput = document.getElementById('orderName');
+  const orderBudgetInput = document.getElementById('orderBudget');
+  const orderPhoneInput = document.getElementById('orderPhone');
+  const orderTelegramInput = document.getElementById('orderTelegram');
+  const orderMessageInput = document.getElementById('orderMessage');
+  const orderSubmitBtn = document.getElementById('orderSubmitBtn');
+  const orderNote = document.getElementById('orderNote');
+
+  const ordersListItems = document.getElementById('ordersListItems');
+  const ordersBadge = document.getElementById('ordersBadge');
+  const ordersBadgeInline = document.getElementById('ordersBadgeInline');
 
   const manageListItems = document.getElementById('manageListItems');
   const emptyState = document.getElementById('emptyState');
@@ -336,6 +514,39 @@
     codeJs.value = '';
   }
 
+  /* ---------------------------------------------------------
+     EDIT MODE — clicking "Edit" on a published template loads
+     it back into this same form instead of creating a new one.
+  --------------------------------------------------------- */
+  function enterEditMode(tpl) {
+    editingTemplateId = tpl.id;
+    siteTitleInput.value = tpl.title;
+    sitePriceInput.value = tpl.price;
+    codeHtml.value = tpl.html || '';
+    codeCss.value = tpl.css || '';
+    codeJs.value = tpl.js || '';
+
+    // Jump to the HTML tab so the loaded code is visible right away.
+    document.querySelectorAll('.editor-tab').forEach((b) => b.classList.remove('is-active'));
+    document.querySelectorAll('.editor-pane').forEach((p) => p.classList.remove('is-active'));
+    document.querySelector('.editor-tab[data-tab="html"]').classList.add('is-active');
+    codeHtml.classList.add('is-active');
+
+    publishBtn.textContent = t('admin.form.update');
+    cancelEditBtn.classList.remove('is-hidden');
+    siteTitleInput.closest('.console-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    siteTitleInput.focus();
+  }
+
+  function exitEditMode() {
+    editingTemplateId = null;
+    publishBtn.textContent = t('admin.form.publish');
+    cancelEditBtn.classList.add('is-hidden');
+    resetForm();
+  }
+
+  cancelEditBtn.addEventListener('click', exitEditMode);
+
   publishBtn.addEventListener('click', async () => {
     const title = siteTitleInput.value.trim();
     const price = sitePriceInput.value.trim();
@@ -351,14 +562,17 @@
       return;
     }
 
+    const isEditing = !!editingTemplateId;
+    const existing = isEditing ? state.templates.find((tpl) => tpl.id === editingTemplateId) : null;
+
     const item = {
-      id: 'tpl_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
+      id: isEditing ? editingTemplateId : 'tpl_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
       title,
       price: Number(price),
       html,
       css,
       js,
-      createdAt: Date.now(),
+      createdAt: existing ? existing.createdAt : Date.now(),
     };
 
     publishBtn.disabled = true;
@@ -367,16 +581,22 @@
       // No need to touch state.templates or re-render here —
       // the Firestore onSnapshot listener does it for every
       // open tab/browser, including this one.
-      resetForm();
-      publishNote.textContent = t('admin.form.publishedNote');
+      publishNote.textContent = isEditing ? t('admin.form.updatedNote') : t('admin.form.publishedNote');
       publishNote.style.color = 'var(--accent-green)';
       publishNote.classList.add('is-visible');
       setTimeout(() => publishNote.classList.remove('is-visible'), 2500);
 
-      // Send the admin straight back to the main storefront so the
-      // freshly published card (and its Live Preview / WhatsApp /
-      // Telegram buttons) is right there, ready to test.
-      setTimeout(() => { window.location.hash = '#/'; }, 900);
+      if (isEditing) {
+        // Stay right here in the admin console so the admin can
+        // keep editing other templates without losing their place.
+        exitEditMode();
+      } else {
+        resetForm();
+        // Send the admin straight back to the main storefront so the
+        // freshly published card (and its Live Preview / WhatsApp /
+        // Telegram buttons) is right there, ready to test.
+        setTimeout(() => { window.location.hash = '#/'; }, 900);
+      }
     } catch (err) {
       console.error('Publish failed:', err);
       publishNote.textContent = t('admin.form.errorFields');
@@ -386,6 +606,64 @@
     } finally {
       publishBtn.disabled = false;
     }
+  });
+
+  /* =========================================================
+     CUSTOM ORDER FORM (client-facing)
+  ========================================================= */
+  function showOrderNote(text, isError) {
+    orderNote.textContent = text;
+    orderNote.style.color = isError ? 'var(--accent-red)' : 'var(--accent-green)';
+    orderNote.classList.add('is-visible');
+    setTimeout(() => orderNote.classList.remove('is-visible'), 3200);
+  }
+
+  orderSubmitBtn.addEventListener('click', async () => {
+    const name = orderNameInput.value.trim();
+    const phone = orderPhoneInput.value.trim();
+    const telegram = orderTelegramInput.value.trim();
+    const budget = orderBudgetInput.value.trim();
+    const message = orderMessageInput.value.trim();
+
+    if (!name || (!phone && !telegram) || !message) {
+      showOrderNote(t('order.errorFields'), true);
+      return;
+    }
+
+    const order = {
+      id: 'ord_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
+      name,
+      phone,
+      telegram,
+      budget: budget ? Number(budget) : null,
+      message,
+      status: 'new',
+      createdAt: Date.now(),
+    };
+
+    orderSubmitBtn.disabled = true;
+    try {
+      // Saved to Firestore first — this is the source of truth and
+      // is what the admin console always shows, Telegram or not.
+      await createOrderRemote(order);
+      notifyTelegram(order); // best-effort, never blocks the success message
+      orderNameInput.value = '';
+      orderBudgetInput.value = '';
+      orderPhoneInput.value = '';
+      orderTelegramInput.value = '';
+      orderMessageInput.value = '';
+      showOrderNote(t('order.success'), false);
+    } catch (err) {
+      console.error('Sending order failed:', err);
+      showOrderNote(t('order.error'), true);
+    } finally {
+      orderSubmitBtn.disabled = false;
+    }
+  });
+  [orderNameInput, orderPhoneInput, orderTelegramInput, orderBudgetInput].forEach((input) => {
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') orderSubmitBtn.click();
+    });
   });
 
   /* =========================================================
@@ -428,14 +706,143 @@
       info.appendChild(nameSpan);
       info.appendChild(priceSpan);
 
+      const actions = document.createElement('div');
+      actions.style.display = 'flex';
+      actions.style.gap = '8px';
+
+      const editBtn = document.createElement('button');
+      editBtn.className = 'manage-row__delete'; // reuses the same pill-button styling
+      editBtn.style.color = 'var(--accent)';
+      editBtn.textContent = t('admin.manage.edit');
+      editBtn.addEventListener('click', () => enterEditMode(tpl));
+
       const delBtn = document.createElement('button');
       delBtn.className = 'manage-row__delete';
       delBtn.textContent = t('admin.manage.delete');
       delBtn.addEventListener('click', () => deleteTemplate(tpl.id));
 
+      actions.appendChild(editBtn);
+      actions.appendChild(delBtn);
+
       row.appendChild(info);
-      row.appendChild(delBtn);
+      row.appendChild(actions);
       manageListItems.appendChild(row);
+    });
+  }
+
+  /* =========================================================
+     RENDER: ORDERS LIST (admin) + notification badge
+  ========================================================= */
+  function formatOrderTime(ts) {
+    try {
+      return new Date(ts).toLocaleString(state.lang === 'ru' ? 'ru-RU' : state.lang === 'tj' ? 'ru-RU' : 'en-US', {
+        month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit',
+      });
+    } catch (e) {
+      return '';
+    }
+  }
+
+  function updateOrdersBadge() {
+    const count = state.orders.filter((o) => o.status !== 'handled').length;
+    [ordersBadge, ordersBadgeInline].forEach((el) => {
+      if (!el) return;
+      el.textContent = String(count);
+      el.classList.toggle('is-hidden', count === 0);
+    });
+  }
+
+  function renderOrdersList() {
+    updateOrdersBadge();
+    if (!ordersListItems) return;
+    ordersListItems.innerHTML = '';
+
+    if (state.orders.length === 0) {
+      const p = document.createElement('p');
+      p.className = 'manage-list__empty';
+      p.textContent = t('admin.orders.empty');
+      ordersListItems.appendChild(p);
+      return;
+    }
+
+    state.orders.forEach((order) => {
+      const row = document.createElement('div');
+      row.className = 'order-row' + (order.status === 'handled' ? ' is-handled' : ' is-new');
+
+      const head = document.createElement('div');
+      head.className = 'order-row__head';
+
+      const nameSpan = document.createElement('span');
+      nameSpan.className = 'order-row__name';
+      nameSpan.textContent = order.name;
+
+      head.appendChild(nameSpan);
+
+      if (order.phone) {
+        const phoneSpan = document.createElement('span');
+        phoneSpan.className = 'order-row__contact';
+        phoneSpan.textContent = order.phone;
+        head.appendChild(phoneSpan);
+      }
+      if (order.telegram) {
+        const tgSpan = document.createElement('span');
+        tgSpan.className = 'order-row__contact';
+        tgSpan.textContent = order.telegram.charAt(0) === '@' ? order.telegram : '@' + order.telegram;
+        head.appendChild(tgSpan);
+      }
+      if (order.budget) {
+        const budgetSpan = document.createElement('span');
+        budgetSpan.className = 'order-row__budget';
+        budgetSpan.textContent = order.budget + ' ' + t('card.currency');
+        head.appendChild(budgetSpan);
+      }
+
+      const timeSpan = document.createElement('span');
+      timeSpan.className = 'order-row__time';
+      timeSpan.textContent = formatOrderTime(order.createdAt);
+      head.appendChild(timeSpan);
+
+      const messageP = document.createElement('p');
+      messageP.className = 'order-row__message';
+      messageP.textContent = order.message;
+
+      const actions = document.createElement('div');
+      actions.className = 'order-row__actions';
+
+      if (order.status !== 'handled') {
+        const handleBtn = document.createElement('button');
+        handleBtn.className = 'order-row__handle';
+        handleBtn.textContent = t('admin.orders.handle');
+        handleBtn.addEventListener('click', async () => {
+          handleBtn.disabled = true;
+          try {
+            await setOrderHandledRemote(order.id);
+          } catch (err) {
+            console.error('Marking order handled failed:', err);
+            handleBtn.disabled = false;
+          }
+        });
+        actions.appendChild(handleBtn);
+      }
+
+      const delBtn = document.createElement('button');
+      delBtn.className = 'order-row__delete';
+      delBtn.textContent = t('admin.orders.delete');
+      delBtn.addEventListener('click', async () => {
+        delBtn.disabled = true;
+        try {
+          await deleteOrderRemote(order.id);
+        } catch (err) {
+          console.error('Deleting order failed:', err);
+          delBtn.disabled = false;
+        }
+      });
+      actions.appendChild(delBtn);
+
+      row.appendChild(head);
+      row.appendChild(messageP);
+      row.appendChild(actions);
+      ordersListItems.appendChild(row);
     });
   }
 
@@ -459,6 +866,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- Locks this preview into its own sealed box: without this,
+     any relative link/src/url() inside the template's own
+     HTML/CSS/JS (e.g. href="style.css", url(logo.png)) would
+     resolve against the REAL Marketa site's URL — silently
+     pulling in the real site's stylesheet/scripts/images and
+     making the preview look "like the main site". Pointing the
+     base at a domain that can never exist means every relative
+     reference just fails to load instead, so nothing from
+     outside this iframe can ever leak in. -->
+<base href="https://sandboxed-preview.invalid/">
 <style>html,body{margin:0;padding:0;}${tpl.css || ''}</style>
 </head>
 <body>
@@ -490,81 +907,174 @@ ${tpl.html || ''}
 </html>`;
   }
 
-  function renderCards() {
-    cardGrid.innerHTML = '';
+  /* ---------------------------------------------------------
+     Card rendering is diff-based on purpose: every card holds a
+     live iframe running the template's own HTML/CSS/JS, and
+     those are the single heaviest thing on this page. Wiping
+     and rebuilding the whole grid (the old behavior) meant that
+     ANY change — a new order arriving, contact info being
+     saved, even just switching language — reloaded every single
+     mini-preview at once, which is what made things freeze up
+     on older/weaker phones. Instead:
+       - existing cards are reused (moved, not recreated) when
+         their template hasn't actually changed
+       - a card's iframe only gets its srcdoc set once it
+         actually scrolls near the viewport (IntersectionObserver)
+       - only a template that was genuinely edited gets its
+         iframe content refreshed
+  --------------------------------------------------------- */
+  const cardElements = new Map(); // tpl.id -> { el, signature }
+  let thumbObserver = null;
 
+  function templateSignature(tpl) {
+    return [tpl.title, tpl.price, tpl.html, tpl.css, tpl.js].join('\u0001');
+  }
+
+  function getThumbObserver() {
+    if (!thumbObserver) {
+      thumbObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const iframe = entry.target;
+          if (iframe.__tpl) {
+            iframe.srcdoc = buildTemplateDoc(iframe.__tpl);
+            iframe.classList.add('is-loaded');
+          }
+          thumbObserver.unobserve(iframe);
+        });
+      }, { rootMargin: '300px 0px', threshold: 0.01 });
+    }
+    return thumbObserver;
+  }
+
+  function buildCardMarkup() {
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card__thumb" data-action="thumb" role="button" tabindex="0" aria-label="${t('card.preview')}">
+        <div class="card__thumb-frame-wrap">
+          <iframe class="card__thumb-frame" sandbox="allow-scripts" referrerpolicy="no-referrer" tabindex="-1" aria-hidden="true" loading="lazy"></iframe>
+        </div>
+        <div class="card__thumb-chrome">
+          <span class="dot dot--red"></span>
+          <span class="dot dot--yellow"></span>
+          <span class="dot dot--green"></span>
+        </div>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title"></h3>
+        <p class="card__price"></p>
+        <div class="card__actions">
+          <button class="card__btn card__btn--preview" data-action="preview">${t('card.preview')}</button>
+          <a class="card__btn card__btn--whatsapp" data-action="whatsapp" target="_blank" rel="noopener">${t('card.whatsapp')}</a>
+          <a class="card__btn card__btn--telegram" data-action="telegram" target="_blank" rel="noopener">${t('card.telegram')}</a>
+        </div>
+      </div>
+    `;
+
+    // Bound once at creation; reads card.__tpl at click-time so
+    // later in-place updates (see updateCardContent) are picked up
+    // without ever re-attaching listeners.
+    const thumb = card.querySelector('[data-action="thumb"]');
+    thumb.addEventListener('click', () => openPreview(card.__tpl));
+    thumb.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPreview(card.__tpl); }
+    });
+    card.querySelector('[data-action="preview"]').addEventListener('click', () => openPreview(card.__tpl));
+
+    return card;
+  }
+
+  function updateCardLinks(card, tpl) {
+    const waLink = card.querySelector('[data-action="whatsapp"]');
+    const tgLink = card.querySelector('[data-action="telegram"]');
+
+    if (state.contact.whatsapp) {
+      waLink.href = buildWhatsappUrl(tpl);
+      waLink.onclick = null;
+    } else {
+      waLink.href = '#admin-panel';
+      waLink.onclick = (e) => { e.preventDefault(); alert(t('card.noContactWhatsapp')); };
+    }
+
+    if (state.contact.telegram) {
+      tgLink.href = buildTelegramUrl();
+      tgLink.onclick = null;
+    } else {
+      tgLink.href = '#admin-panel';
+      tgLink.onclick = (e) => { e.preventDefault(); alert(t('card.noContactTelegram')); };
+    }
+  }
+
+  function updateCardContent(card, tpl, signatureChanged) {
+    card.__tpl = tpl;
+    card.querySelector('.card__title').textContent = tpl.title;
+    card.querySelector('.card__price').textContent = `${t('card.priceLabel')}: ${tpl.price} ${t('card.currency')}`;
+    card.querySelector('[data-action="preview"]').textContent = t('card.preview');
+    card.querySelector('[data-action="whatsapp"]').textContent = t('card.whatsapp');
+    card.querySelector('[data-action="telegram"]').textContent = t('card.telegram');
+
+    const iframe = card.querySelector('.card__thumb-frame');
+    iframe.__tpl = tpl;
+    if (signatureChanged && iframe.classList.contains('is-loaded')) {
+      // Already-visible preview whose underlying template was
+      // actually edited — refresh it directly instead of waiting
+      // on the observer (which already fired once and won't again).
+      iframe.srcdoc = buildTemplateDoc(tpl);
+    }
+
+    updateCardLinks(card, tpl);
+  }
+
+  function renderCards() {
     if (state.templates.length === 0) {
       emptyState.classList.remove('is-hidden');
       cardGrid.style.display = 'none';
+      cardGrid.innerHTML = '';
+      cardElements.forEach((entry) => { if (thumbObserver) thumbObserver.unobserve(entry.el.querySelector('.card__thumb-frame')); });
+      cardElements.clear();
       return;
     }
     emptyState.classList.add('is-hidden');
     cardGrid.style.display = 'grid';
 
+    const currentIds = new Set(state.templates.map((tpl) => tpl.id));
+
+    // Drop cards for templates that no longer exist.
+    cardElements.forEach((entry, id) => {
+      if (!currentIds.has(id)) {
+        const iframe = entry.el.querySelector('.card__thumb-frame');
+        if (thumbObserver) thumbObserver.unobserve(iframe);
+        entry.el.remove();
+        cardElements.delete(id);
+      }
+    });
+
     state.templates.forEach((tpl) => {
-      const card = document.createElement('article');
-      card.className = 'card';
+      const signature = templateSignature(tpl);
+      let entry = cardElements.get(tpl.id);
 
-      card.innerHTML = `
-        <div class="card__thumb" data-action="thumb" role="button" tabindex="0" aria-label="${t('card.preview')}">
-          <div class="card__thumb-frame-wrap">
-            <iframe class="card__thumb-frame" sandbox="allow-scripts" referrerpolicy="no-referrer" tabindex="-1" aria-hidden="true" loading="lazy"></iframe>
-          </div>
-          <div class="card__thumb-chrome">
-            <span class="dot dot--red"></span>
-            <span class="dot dot--yellow"></span>
-            <span class="dot dot--green"></span>
-          </div>
-        </div>
-        <div class="card__body">
-          <h3 class="card__title"></h3>
-          <p class="card__price"></p>
-          <div class="card__actions">
-            <button class="card__btn card__btn--preview" data-action="preview">${t('card.preview')}</button>
-            <a class="card__btn card__btn--whatsapp" data-action="whatsapp" target="_blank" rel="noopener">${t('card.whatsapp')}</a>
-            <a class="card__btn card__btn--telegram" data-action="telegram" target="_blank" rel="noopener">${t('card.telegram')}</a>
-          </div>
-        </div>
-      `;
-
-      card.querySelector('.card__thumb-frame').srcdoc = buildTemplateDoc(tpl);
-
-      card.querySelector('.card__title').textContent = tpl.title;
-      card.querySelector('.card__price').textContent = `${t('card.priceLabel')}: ${tpl.price} ${t('card.currency')}`;
-
-      const thumb = card.querySelector('[data-action="thumb"]');
-      thumb.addEventListener('click', () => openPreview(tpl));
-      thumb.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPreview(tpl); }
-      });
-
-      const previewBtn = card.querySelector('[data-action="preview"]');
-      previewBtn.addEventListener('click', () => openPreview(tpl));
-
-      const waLink = card.querySelector('[data-action="whatsapp"]');
-      const tgLink = card.querySelector('[data-action="telegram"]');
-
-      if (state.contact.whatsapp) {
-        waLink.href = buildWhatsappUrl(tpl);
+      if (!entry) {
+        const el = buildCardMarkup();
+        const iframe = el.querySelector('.card__thumb-frame');
+        iframe.__tpl = tpl;
+        getThumbObserver().observe(iframe); // srcdoc is set lazily, once it's near the viewport
+        entry = { el, signature };
+        cardElements.set(tpl.id, entry);
+        updateCardContent(el, tpl, false);
+      } else if (entry.signature !== signature) {
+        updateCardContent(entry.el, tpl, true);
+        entry.signature = signature;
       } else {
-        waLink.href = '#admin-panel';
-        waLink.addEventListener('click', (e) => {
-          e.preventDefault();
-          alert(t('card.noContactWhatsapp'));
-        });
+        // Unchanged template — still refresh links/labels (contact
+        // info or language may have changed) but never touch the iframe.
+        updateCardContent(entry.el, tpl, false);
       }
 
-      if (state.contact.telegram) {
-        tgLink.href = buildTelegramUrl();
-      } else {
-        tgLink.href = '#admin-panel';
-        tgLink.addEventListener('click', (e) => {
-          e.preventDefault();
-          alert(t('card.noContactTelegram'));
-        });
-      }
-
-      cardGrid.appendChild(card);
+      // appendChild on a node already in this DOM just moves it —
+      // it does not detach+reattach the iframe's browsing context,
+      // so this reorders the grid without reloading any preview.
+      cardGrid.appendChild(entry.el);
     });
   }
 
@@ -634,6 +1144,7 @@ ${tpl.html || ''}
 
   function logout() {
     if (window.auth) window.auth.signOut();
+    unsubscribeFromOrders();
     loginUsername.value = '';
     loginPassword.value = '';
     window.location.hash = '#/';
@@ -644,12 +1155,16 @@ ${tpl.html || ''}
     adminPanel.classList.remove('is-hidden');
     hydrateContactInputs();
     renderManageList();
+    // Orders are only readable while signed in (see firebase-config.js
+    // rules), so this is where the live listener actually starts.
+    subscribeToOrders();
   }
 
   function showAdminLogin() {
     adminPanel.classList.add('is-hidden');
     adminLogin.classList.remove('is-hidden');
     loginError.classList.remove('is-visible');
+    unsubscribeFromOrders();
   }
 
   loginSubmitBtn.addEventListener('click', attemptLogin);
