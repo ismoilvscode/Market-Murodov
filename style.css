@@ -143,6 +143,31 @@ textarea, input, select{ font-family: inherit; }
 body.is-admin-route .route-badge{ display: inline-flex; }
 body.is-admin-route .back-link{ display: inline-block; }
 
+/* orders notification badge — shown in the navbar (admin route)
+   and inline next to "Incoming orders" in the admin console */
+.orders-badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--accent-red);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1;
+  box-shadow: 0 0 0 3px rgba(239,106,91,0.18);
+  animation: badgePulse 1.8s ease-in-out infinite;
+}
+.orders-badge.is-hidden{ display: none; animation: none; }
+@keyframes badgePulse{
+  0%, 100%{ box-shadow: 0 0 0 3px rgba(239,106,91,0.18); }
+  50%{ box-shadow: 0 0 0 6px rgba(239,106,91,0.06); }
+}
+
 .lang-switch{
   display: flex;
   align-items: center;
@@ -385,6 +410,10 @@ body.is-admin-route .back-link{ display: inline-block; }
   border-color: var(--accent);
   color: var(--accent);
 }
+/* used where a ghost button sits inline next to another button
+   instead of stretching full width (e.g. "Cancel edit") */
+.btn--auto{ width: auto; }
+.btn--auto.is-hidden{ display: none; }
 .save-note{
   font-size: 12px;
   color: var(--accent-green);
@@ -516,6 +545,73 @@ body.is-admin-route .back-link{ display: inline-block; }
 }
 
 /* =========================================================
+   CUSTOM ORDER SECTION (client-facing)
+========================================================= */
+.order-card{ max-width: 640px; margin: 0 auto; }
+.order-card .field textarea{ resize: vertical; min-height: 90px; }
+
+/* =========================================================
+   ADMIN — INCOMING ORDERS LIST
+========================================================= */
+.orders-list{ margin-bottom: 34px; }
+.order-row{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--bg-dark-alt);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-s);
+  padding: 14px 16px;
+  transition: var(--ease);
+}
+.order-row:hover{ border-color: var(--accent-dim); }
+.order-row.is-new{ border-color: rgba(239,106,91,0.45); }
+.order-row.is-handled{ opacity: 0.6; }
+.order-row__head{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+}
+.order-row__name{ font-size: 14px; font-weight: 600; }
+.order-row__contact{
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--accent);
+}
+.order-row__budget{
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent-warm);
+}
+.order-row__time{
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-light-muted);
+}
+.order-row__message{
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text-light-muted);
+  white-space: pre-wrap;
+}
+.order-row__actions{ display: flex; gap: 8px; margin-top: 2px; }
+.order-row__actions button{
+  background: transparent;
+  border: 1px solid var(--border-dark);
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: var(--radius-s);
+  transition: var(--ease);
+}
+.order-row__handle{ color: var(--accent-green); }
+.order-row__handle:hover{ background: var(--accent-green); color: #fff; border-color: var(--accent-green); }
+.order-row__delete{ color: var(--accent-red); }
+.order-row__delete:hover{ background: var(--accent-red); color: #fff; border-color: var(--accent-red); }
+
+/* =========================================================
    EMPTY STATE
 ========================================================= */
 .empty-state{
@@ -565,6 +661,11 @@ body.is-admin-route .back-link{ display: inline-block; }
   display: flex;
   flex-direction: column;
   isolation: isolate;
+  /* Skip layout/paint work for cards scrolled off-screen — the
+     mini live-preview iframes are the heaviest thing on this
+     page, so this matters a lot on older/weaker phones. */
+  content-visibility: auto;
+  contain-intrinsic-size: 0 360px;
 }
 .card:hover{
   transform: translateY(-4px);
@@ -602,8 +703,14 @@ body.is-admin-route .back-link{ display: inline-block; }
   transform-origin: 0 0;
   pointer-events: none;
   background: #fff;
-  transition: var(--ease);
+  opacity: 0;
+  transition: var(--ease), opacity 0.35s ease-in-out;
 }
+/* set once the mini-preview has actually loaded (see app.js —
+   thumbnails load lazily as they scroll into view instead of
+   all firing at once, which is what made this laggy on
+   older/weaker phones) */
+.card__thumb-frame.is-loaded{ opacity: 1; }
 .card:hover .card__thumb-frame{ transform: scale(0.26); }
 .card__thumb-chrome{
   position: absolute;
