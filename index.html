@@ -30,6 +30,7 @@
 
     <nav class="navbar__links">
       <span class="route-badge" id="routeBadge" data-i18n="nav.adminBadge">Admin mode</span>
+      <span class="orders-badge is-hidden" id="ordersBadge">0</span>
       <a href="#/" class="back-link" id="backToStoreLink" data-i18n="nav.backToStore">&larr; Back to storefront</a>
     </nav>
 
@@ -81,6 +82,56 @@
 
       <div class="card-grid" id="cardGrid">
         <!-- injected cards -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CUSTOM ORDER -->
+  <section class="section section--dark" id="orderSection">
+    <div class="section__inner">
+
+      <div class="section__head">
+        <span class="section__index">/ 02</span>
+        <div>
+          <h2 class="section__title" data-i18n="order.heading">Order a custom site</h2>
+          <p class="section__desc" data-i18n="order.subheading">Don't see what you need? Describe it and it goes straight to the seller.</p>
+        </div>
+      </div>
+
+      <div class="console-card order-card">
+        <div class="console-card__body">
+          <div class="field-row">
+            <label class="field">
+              <span data-i18n="order.name">Your name</span>
+              <input type="text" id="orderName" data-i18n-placeholder="order.namePlaceholder" placeholder="Aziz" />
+            </label>
+            <label class="field field--narrow">
+              <span data-i18n="order.budget">Budget (TJS)</span>
+              <input type="number" id="orderBudget" min="0" data-i18n-placeholder="order.budgetPlaceholder" placeholder="500" />
+            </label>
+          </div>
+          <div class="field-row">
+            <label class="field">
+              <span data-i18n="order.phone">Phone number</span>
+              <input type="text" id="orderPhone" data-i18n-placeholder="order.phonePlaceholder" placeholder="+992 90 123 4567" />
+            </label>
+            <label class="field">
+              <span data-i18n="order.telegram">Telegram username</span>
+              <input type="text" id="orderTelegram" data-i18n-placeholder="order.telegramPlaceholder" placeholder="@aziz" />
+            </label>
+          </div>
+          <label class="field">
+            <span data-i18n="order.message">What kind of site do you need?</span>
+            <textarea id="orderMessage" rows="4" data-i18n-placeholder="order.messagePlaceholder" placeholder="E.g. a landing page for my cafe, with a menu and an order button..."></textarea>
+          </label>
+          <p class="field-hint" data-i18n="order.hint">Fill in at least one contact — phone or Telegram.</p>
+
+          <div class="console-card__actions">
+            <button class="btn btn--primary" id="orderSubmitBtn" data-i18n="order.submit">Send order</button>
+            <span class="publish-note" id="orderNote"></span>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -196,9 +247,21 @@
 
           <div class="console-card__actions">
             <button class="btn btn--primary" id="publishBtn" data-i18n="admin.form.publish">Save and publish</button>
+            <button class="btn btn--ghost btn--auto is-hidden" id="cancelEditBtn" data-i18n="admin.form.cancelEdit">Cancel edit</button>
             <span class="publish-note" id="publishNote"></span>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Incoming custom orders -->
+    <div class="manage-list" id="ordersSection">
+      <h3 class="manage-list__title">
+        <span data-i18n="admin.orders.title">Incoming orders</span>
+        <span class="orders-badge is-hidden" id="ordersBadgeInline">0</span>
+      </h3>
+      <div class="manage-list__items orders-list" id="ordersListItems">
+        <!-- injected rows -->
       </div>
     </div>
 
@@ -227,7 +290,7 @@
       <span class="modal__title" id="modalTitle">Live Preview</span>
       <button class="modal__close" id="modalCloseBtn" aria-label="Close preview">&times;</button>
     </div>
-    <iframe id="previewFrame" class="modal__frame" title="Live template preview" sandbox="allow-scripts allow-same-origin"></iframe>
+    <iframe id="previewFrame" class="modal__frame" title="Live template preview" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe>
   </div>
 </div>
 
