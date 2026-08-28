@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Murodov Marketa &mdash; Website Template Marketplace</title>
+<title>WebLy &mdash; Website Template Marketplace</title>
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="alternate icon" href="favicon.svg" />
@@ -25,7 +25,7 @@
         <span class="dot dot--yellow"></span>
         <span class="dot dot--green"></span>
       </span>
-      <span class="brand__name">Marketa</span>
+      <span class="brand__name">WebLy</span>
     </div>
 
     <nav class="navbar__links">
@@ -34,9 +34,30 @@
       <a href="#/" class="back-link" id="backToStoreLink" data-i18n="nav.backToStore">&larr; Back to storefront</a>
     </nav>
 
-    <div class="lang-switch">
-      <span class="lang-switch__icon" aria-hidden="true">&#127760;</span>
-      <select id="langSelect" aria-label="Language selector">
+    <div class="lang-switch" id="langSwitch">
+      <button type="button" class="lang-switch__trigger" id="langTrigger" aria-haspopup="listbox" aria-expanded="false">
+        <span class="lang-switch__icon" aria-hidden="true">&#127760;</span>
+        <span class="lang-switch__current" id="langCurrent">TJ &mdash; Тоҷикӣ</span>
+        <span class="lang-switch__chevron" aria-hidden="true">&#9662;</span>
+      </button>
+      <ul class="lang-switch__list is-hidden" id="langList" role="listbox" aria-label="Language selector" tabindex="-1">
+        <li class="lang-switch__option" role="option" data-lang="en" data-label="EN &mdash; English">
+          <span class="lang-switch__flag" aria-hidden="true">EN</span>
+          <span>English</span>
+          <span class="lang-switch__check" aria-hidden="true">&#10003;</span>
+        </li>
+        <li class="lang-switch__option" role="option" data-lang="ru" data-label="RU &mdash; Русский">
+          <span class="lang-switch__flag" aria-hidden="true">RU</span>
+          <span>Русский</span>
+          <span class="lang-switch__check" aria-hidden="true">&#10003;</span>
+        </li>
+        <li class="lang-switch__option is-selected" role="option" data-lang="tj" data-label="TJ &mdash; Тоҷикӣ" aria-selected="true">
+          <span class="lang-switch__flag" aria-hidden="true">TJ</span>
+          <span>Тоҷикӣ</span>
+          <span class="lang-switch__check" aria-hidden="true">&#10003;</span>
+        </li>
+      </ul>
+      <select id="langSelect" class="sr-only" aria-hidden="true" tabindex="-1">
         <option value="en">EN &mdash; English</option>
         <option value="ru">RU &mdash; Русский</option>
         <option value="tj">TJ &mdash; Тоҷикӣ</option>
@@ -49,9 +70,10 @@
 <div id="clientView" class="route-view">
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="heroSection">
+    <div class="scene3d scene3d--hero" id="heroScene" aria-hidden="true"></div>
     <div class="hero__inner">
-      <p class="hero__eyebrow" data-i18n="hero.eyebrow">01001101 &mdash; template exchange</p>
+      <p class="hero__eyebrow" data-i18n="hero.eyebrow">WebLy &mdash; website template exchange</p>
       <h1 class="hero__title">
         <span data-i18n="hero.title1">Ship a website</span><br/>
         <span class="hero__title--accent" data-i18n="hero.title2">before your coffee cools.</span>
@@ -59,6 +81,11 @@
       <p class="hero__subtitle" data-i18n="hero.subtitle">
         Browse ready-made templates below. Preview any of them live, then reach the seller on WhatsApp or Telegram in one tap.
       </p>
+
+      <div class="hero__ctas">
+        <a href="#showcase" class="btn-hero btn-hero--primary" data-i18n="hero.cta1">Browse the storefront</a>
+        <a href="#orderSection" class="btn-hero btn-hero--ghost" data-i18n="hero.cta2">Order a custom site</a>
+      </div>
     </div>
   </section>
 
@@ -66,7 +93,7 @@
   <section class="section section--light" id="showcase">
     <div class="section__inner">
 
-      <div class="section__head">
+      <div class="section__head reveal">
         <span class="section__index section__index--dark">/ 01</span>
         <div>
           <h2 class="section__title section__title--dark" data-i18n="showcase.heading">Storefront</h2>
@@ -87,19 +114,67 @@
     </div>
   </section>
 
+  <!-- ABOUT ME -->
+  <section class="section section--dark about-section" id="about">
+    <div class="scene3d" id="aboutScene" aria-hidden="true"></div>
+    <div class="section__inner about-section__inner">
+
+      <div class="section__head reveal">
+        <span class="section__index">/ 02</span>
+        <div>
+          <h2 class="section__title" data-i18n="about.heading">About me</h2>
+          <p class="section__desc" data-i18n="about.subheading">The designer behind WebLy.</p>
+        </div>
+      </div>
+
+      <div class="about-grid reveal">
+        <div class="about-card tilt-card">
+          <div class="about-card__avatar" aria-hidden="true">M</div>
+          <h3 class="about-card__name" data-i18n="about.name">Murodov Ismoil</h3>
+          <p class="about-card__role" data-i18n="about.role">Web designer &amp; front-end developer</p>
+          <p class="about-card__bio" data-i18n="about.bio">
+            I design and build fast, good-looking websites — from ready-made templates to fully custom builds. Every project on this storefront is made and shipped by me, end to end.
+          </p>
+          <div class="about-card__tags">
+            <span class="about-tag" data-i18n="about.tag1">HTML / CSS / JS</span>
+            <span class="about-tag" data-i18n="about.tag2">UI Design</span>
+            <span class="about-tag" data-i18n="about.tag3">Firebase</span>
+            <span class="about-tag" data-i18n="about.tag4">3D &amp; motion</span>
+          </div>
+        </div>
+
+        <div class="about-stats">
+          <div class="about-stat tilt-card">
+            <span class="about-stat__num" data-i18n="about.stat1Num">100%</span>
+            <span class="about-stat__label" data-i18n="about.stat1Label">Custom-built, no drag-and-drop templates</span>
+          </div>
+          <div class="about-stat tilt-card">
+            <span class="about-stat__num" data-i18n="about.stat2Num">1:1</span>
+            <span class="about-stat__label" data-i18n="about.stat2Label">Direct contact, no middlemen</span>
+          </div>
+          <div class="about-stat tilt-card">
+            <span class="about-stat__num" data-i18n="about.stat3Num">&#8734;</span>
+            <span class="about-stat__label" data-i18n="about.stat3Label">Revisions until you're happy</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- CUSTOM ORDER -->
   <section class="section section--dark" id="orderSection">
     <div class="section__inner">
 
-      <div class="section__head">
-        <span class="section__index">/ 02</span>
+      <div class="section__head reveal">
+        <span class="section__index">/ 03</span>
         <div>
           <h2 class="section__title" data-i18n="order.heading">Order a custom site</h2>
           <p class="section__desc" data-i18n="order.subheading">Don't see what you need? Describe it and it goes straight to the seller.</p>
         </div>
       </div>
 
-      <div class="console-card order-card">
+      <div class="console-card order-card reveal">
         <div class="console-card__body">
           <div class="field-row">
             <label class="field">
@@ -107,7 +182,7 @@
               <input type="text" id="orderName" data-i18n-placeholder="order.namePlaceholder" placeholder="Aziz" />
             </label>
             <label class="field field--narrow">
-              <span data-i18n="order.budget">Budget (TJS)</span>
+              <span data-i18n="order.budget">Budget ($)</span>
               <input type="number" id="orderBudget" min="0" data-i18n-placeholder="order.budgetPlaceholder" placeholder="500" />
             </label>
           </div>
@@ -138,7 +213,7 @@
   </section>
 
   <footer class="footer">
-    <p data-i18n="footer.text">Marketa &mdash; a lightweight template exchange. All data stored locally in your browser.</p>
+    <p data-i18n="footer.text">WebLy &mdash; a lightweight template exchange. All data stored locally in your browser.</p>
   </footer>
 
 </div>
@@ -201,7 +276,7 @@
 
           <label class="field">
             <span data-i18n="admin.contact.telegram">Telegram username</span>
-            <input type="text" id="ownerTelegram" placeholder="@marketa_store" />
+            <input type="text" id="ownerTelegram" placeholder="@webly_store" />
           </label>
 
           <button class="btn btn--ghost" id="saveContactBtn" data-i18n="admin.contact.save">Save contact info</button>
@@ -222,7 +297,7 @@
               <input type="text" id="siteTitle" data-i18n-placeholder="admin.form.namePlaceholder" placeholder="Aurora Portfolio" />
             </label>
             <label class="field field--narrow">
-              <span data-i18n="admin.form.price">Price (TJS)</span>
+              <span data-i18n="admin.form.price">Price ($)</span>
               <input type="number" id="sitePrice" min="0" placeholder="450" />
             </label>
           </div>
@@ -300,6 +375,10 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="firebase-config.js"></script>
 
+<!-- three.js — powers the animated 3D scenes (hero + about section) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 <script src="app.js"></script>
+<script src="scene3d.js"></script>
 </body>
 </html>

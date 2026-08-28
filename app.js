@@ -15,7 +15,7 @@
       'login.submit': 'Sign in',
       'login.error': 'Incorrect email or password.',
       'login.logout': 'Log out',
-      'hero.eyebrow': '01001101 — template exchange',
+      'hero.eyebrow': 'WebLy — website template exchange',
       'hero.title1': 'Ship a website',
       'hero.title2': 'before your coffee cools.',
       'hero.subtitle': 'Browse ready-made templates below. Preview any of them live, then reach the seller on WhatsApp or Telegram in one tap.',
@@ -30,7 +30,7 @@
       'admin.form.title': 'New Template',
       'admin.form.name': 'Website title',
       'admin.form.namePlaceholder': 'Aurora Portfolio',
-      'admin.form.price': 'Price (TJS)',
+      'admin.form.price': 'Price ($)',
       'admin.form.publish': 'Save and publish',
       'admin.form.publishedNote': 'Published to the storefront.',
       'admin.form.errorFields': 'Please fill in the title, price and at least the HTML code.',
@@ -49,7 +49,7 @@
       'order.subheading': "Don't see what you need? Describe it and it goes straight to the seller.",
       'order.name': 'Your name',
       'order.namePlaceholder': 'Aziz',
-      'order.budget': 'Budget (TJS)',
+      'order.budget': 'Budget ($)',
       'order.budgetPlaceholder': '500',
       'order.phone': 'Phone number',
       'order.phonePlaceholder': '+992 90 123 4567',
@@ -66,16 +66,33 @@
       'showcase.subheading': "Live inventory of every template that's been published.",
       'showcase.empty.title': 'No active websites yet',
       'showcase.empty.text': 'Check back soon — new templates are added regularly.',
+      'hero.cta1': 'Browse the storefront',
+      'hero.cta2': 'Order a custom site',
+      'about.heading': 'About me',
+      'about.subheading': 'The designer behind WebLy.',
+      'about.name': 'Murodov Ismoil',
+      'about.role': 'Web designer & front-end developer',
+      'about.bio': 'I design and build fast, good-looking websites — from ready-made templates to fully custom builds. Every project on this storefront is made and shipped by me, end to end.',
+      'about.tag1': 'HTML / CSS / JS',
+      'about.tag2': 'UI Design',
+      'about.tag3': 'Firebase',
+      'about.tag4': '3D & motion',
+      'about.stat1Num': '100%',
+      'about.stat1Label': 'Custom-built, no drag-and-drop templates',
+      'about.stat2Num': '1:1',
+      'about.stat2Label': 'Direct contact, no middlemen',
+      'about.stat3Num': '∞',
+      'about.stat3Label': "Revisions until you're happy",
       'card.priceLabel': 'Price',
-      'card.currency': 'TJS',
+      'card.currency': '$',
       'card.preview': 'Live Preview',
       'card.whatsapp': 'WhatsApp',
       'card.telegram': 'Telegram',
       'card.noContactWhatsapp': 'Add a WhatsApp number in Store Contact first.',
       'card.noContactTelegram': 'Add a Telegram username in Store Contact first.',
-      'whatsapp.message': 'Hi! I would like to purchase the "{title}" website template for {price} TJS.',
+      'whatsapp.message': 'Hi! I would like to purchase the "{title}" website template for {price} $.',
       'modal.title': 'Live Preview',
-      'footer.text': 'Marketa — a lightweight template exchange. All data stored locally in your browser.',
+      'footer.text': 'WebLy — a lightweight template exchange. All data stored locally in your browser.',
     },
     ru: {
       'nav.adminBadge': 'Режим администратора',
@@ -87,7 +104,7 @@
       'login.submit': 'Войти',
       'login.error': 'Неверный email или пароль.',
       'login.logout': 'Выйти',
-      'hero.eyebrow': '01001101 — обмен шаблонами',
+      'hero.eyebrow': 'WebLy — обмен шаблонами сайтов',
       'hero.title1': 'Запускайте сайт',
       'hero.title2': 'быстрее, чем остынет кофе.',
       'hero.subtitle': 'Просматривайте готовые шаблоны ниже. Смотрите живой предпросмотр, а затем свяжитесь с продавцом в WhatsApp или Telegram в один клик.',
@@ -102,7 +119,7 @@
       'admin.form.title': 'Новый шаблон',
       'admin.form.name': 'Название сайта',
       'admin.form.namePlaceholder': 'Aurora Portfolio',
-      'admin.form.price': 'Цена (TJS)',
+      'admin.form.price': 'Цена ($)',
       'admin.form.publish': 'Сохранить и опубликовать',
       'admin.form.publishedNote': 'Опубликовано на витрине.',
       'admin.form.errorFields': 'Заполните название, цену и хотя бы HTML-код.',
@@ -121,7 +138,7 @@
       'order.subheading': 'Не нашли то, что нужно? Опишите — и заявка уйдёт прямо продавцу.',
       'order.name': 'Ваше имя',
       'order.namePlaceholder': 'Азиз',
-      'order.budget': 'Бюджет (TJS)',
+      'order.budget': 'Бюджет ($)',
       'order.budgetPlaceholder': '500',
       'order.phone': 'Номер телефона',
       'order.phonePlaceholder': '+992 90 123 4567',
@@ -138,16 +155,33 @@
       'showcase.subheading': 'Актуальный список всех опубликованных шаблонов.',
       'showcase.empty.title': 'Пока нет активных сайтов',
       'showcase.empty.text': 'Загляните позже — новые шаблоны добавляются регулярно.',
+      'hero.cta1': 'Смотреть витрину',
+      'hero.cta2': 'Заказать сайт под себя',
+      'about.heading': 'Обо мне',
+      'about.subheading': 'Дизайнер, стоящий за WebLy.',
+      'about.name': 'Муродов Исмоил',
+      'about.role': 'Веб-дизайнер и фронт-энд разработчик',
+      'about.bio': 'Я проектирую и создаю быстрые, стильные сайты — от готовых шаблонов до полностью индивидуальных решений. Каждый проект в этой витрине сделан и опубликован мной от начала до конца.',
+      'about.tag1': 'HTML / CSS / JS',
+      'about.tag2': 'UI-дизайн',
+      'about.tag3': 'Firebase',
+      'about.tag4': '3D и анимация',
+      'about.stat1Num': '100%',
+      'about.stat1Label': 'Индивидуальная разработка, без конструкторов',
+      'about.stat2Num': '1:1',
+      'about.stat2Label': 'Прямой контакт, без посредников',
+      'about.stat3Num': '∞',
+      'about.stat3Label': 'Правки, пока вы не будете довольны',
       'card.priceLabel': 'Цена',
-      'card.currency': 'TJS',
+      'card.currency': '$',
       'card.preview': 'Предпросмотр',
       'card.whatsapp': 'WhatsApp',
       'card.telegram': 'Telegram',
       'card.noContactWhatsapp': 'Сначала добавьте номер WhatsApp в контактах магазина.',
       'card.noContactTelegram': 'Сначала добавьте имя пользователя Telegram в контактах магазина.',
-      'whatsapp.message': 'Здравствуйте! Хочу приобрести шаблон сайта «{title}» за {price} TJS.',
+      'whatsapp.message': 'Здравствуйте! Хочу приобрести шаблон сайта «{title}» за {price} $.',
       'modal.title': 'Предпросмотр',
-      'footer.text': 'Marketa — лёгкая площадка обмена шаблонами. Все данные хранятся локально в вашем браузере.',
+      'footer.text': 'WebLy — лёгкая площадка обмена шаблонами. Все данные хранятся локально в вашем браузере.',
     },
     tj: {
       'nav.adminBadge': 'Реҷаи админ',
@@ -159,7 +193,7 @@
       'login.submit': 'Ворид шудан',
       'login.error': 'Email ё парол нодуруст аст.',
       'login.logout': 'Баромадан',
-      'hero.eyebrow': '01001101 — мубодилаи шаблон',
+      'hero.eyebrow': 'WebLy — мубодилаи шаблони сомона',
       'hero.title1': 'Сомонаро оғоз кунед',
       'hero.title2': 'пеш аз хунук шудани қаҳва.',
       'hero.subtitle': 'Шаблонҳои тайёрро дар поён бинед. Пешнамоиши зиндаро тамошо кунед ва сипас бо як зарба тавассути WhatsApp ё Telegram бо фурӯшанда тамос гиред.',
@@ -174,7 +208,7 @@
       'admin.form.title': 'Шаблони нав',
       'admin.form.name': 'Номи сомона',
       'admin.form.namePlaceholder': 'Aurora Portfolio',
-      'admin.form.price': 'Нарх (TJS)',
+      'admin.form.price': 'Нарх ($)',
       'admin.form.publish': 'Захира ва нашр кардан',
       'admin.form.publishedNote': 'Дар витрина нашр шуд.',
       'admin.form.errorFields': 'Лутфан унвон, нарх ва ҳадди ақал коди HTML-ро пур кунед.',
@@ -193,7 +227,7 @@
       'order.subheading': 'Чизи даркориро наёфтед? Тасвир кунед — дархост рост ба фурӯшанда меравад.',
       'order.name': 'Номи шумо',
       'order.namePlaceholder': 'Азиз',
-      'order.budget': 'Буҷа (TJS)',
+      'order.budget': 'Буҷа ($)',
       'order.budgetPlaceholder': '500',
       'order.phone': 'Рақами телефон',
       'order.phonePlaceholder': '+992 90 123 4567',
@@ -210,21 +244,38 @@
       'showcase.subheading': 'Рӯйхати зиндаи ҳамаи шаблонҳои нашршуда.',
       'showcase.empty.title': 'То ҳол сомонаи фаъол нест',
       'showcase.empty.text': 'Пас аз андак вақт бозгардед — шаблонҳои нав мунтазам илова мешаванд.',
+      'hero.cta1': 'Дидани витрина',
+      'hero.cta2': 'Фармоиши сомонаи фардӣ',
+      'about.heading': 'Дар бораи ман',
+      'about.subheading': 'Дизайнере, ки WebLy-ро сохтааст.',
+      'about.name': 'Муродов Исмоил',
+      'about.role': 'Веб-дизайнер ва барномасози фронт-энд',
+      'about.bio': 'Ман сомонаҳои тез ва зебоеро тарҳрезӣ ва месозам — аз шаблонҳои омода то лоиҳаҳои комилан фардӣ. Ҳар лоиҳа дар ин витрина аз ибтидо то интиҳо аз ҷониби худи ман сохта ва нашр мешавад.',
+      'about.tag1': 'HTML / CSS / JS',
+      'about.tag2': 'Дизайни UI',
+      'about.tag3': 'Firebase',
+      'about.tag4': '3D ва анимация',
+      'about.stat1Num': '100%',
+      'about.stat1Label': 'Комилан фардӣ, бе конструктор',
+      'about.stat2Num': '1:1',
+      'about.stat2Label': 'Тамоси мустақим, бе миёнарав',
+      'about.stat3Num': '∞',
+      'about.stat3Label': 'Ислоҳот то он даме, ки шумо қаноатманд шавед',
       'card.priceLabel': 'Нарх',
-      'card.currency': 'TJS',
+      'card.currency': '$',
       'card.preview': 'Пешнамоиши зинда',
       'card.whatsapp': 'WhatsApp',
       'card.telegram': 'Telegram',
       'card.noContactWhatsapp': 'Аввал рақами WhatsApp-ро дар тамоси мағоза илова кунед.',
       'card.noContactTelegram': 'Аввал номи корбарии Telegram-ро дар тамоси мағоза илова кунед.',
-      'whatsapp.message': 'Салом! Ман мехоҳам шаблони сомонаи «{title}»-ро ба нархи {price} TJS харам.',
+      'whatsapp.message': 'Салом! Ман мехоҳам шаблони сомонаи «{title}»-ро ба нархи {price} $ харам.',
       'modal.title': 'Пешнамоиши зинда',
-      'footer.text': 'Marketa — платформаи сабуки мубодилаи шаблонҳо. Ҳамаи маълумот дар браузери шумо маҳаллӣ нигоҳ дошта мешавад.',
+      'footer.text': 'WebLy — платформаи сабуки мубодилаи шаблонҳо. Ҳамаи маълумот дар браузери шумо маҳаллӣ нигоҳ дошта мешавад.',
     },
   };
 
   const STORAGE_KEYS = {
-    lang: 'marketa_lang',
+    lang: 'webly_lang',
   };
 
   // Admin credentials now live in Firebase Authentication (see
@@ -369,12 +420,12 @@
       return; // Telegram not configured — order still lives in Firestore/Admin Console.
     }
     const lines = [
-      '🆕 New order — Murodov Marketa',
+      '🆕 New order — WebLy',
       `Name: ${order.name}`,
     ];
     if (order.phone) lines.push(`Phone: ${order.phone}`);
     if (order.telegram) lines.push(`Telegram: ${order.telegram}`);
-    if (order.budget) lines.push(`Budget: ${order.budget} TJS`);
+    if (order.budget) lines.push(`Budget: ${order.budget} $`);
     lines.push(`Message: ${order.message}`);
     try {
       await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
@@ -406,6 +457,32 @@
     renderManageList();
     renderOrdersList();
     renderCards();
+  }
+
+  /* =========================================================
+     SCROLL-REVEAL
+     ---------------------------------------------------------
+     One shared observer for the whole page. Each element is
+     watched only until it reveals itself once, then dropped —
+     so the ongoing cost is ~0 regardless of how long someone
+     scrolls, which is what keeps this safe on 2GB-RAM phones.
+  ========================================================= */
+  let revealObserver = null;
+  function getRevealObserver() {
+    if (!revealObserver) {
+      revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    }
+    return revealObserver;
+  }
+  function observeReveal(el) {
+    if (!el) return;
+    getRevealObserver().observe(el);
   }
 
   /* =========================================================
@@ -442,6 +519,7 @@
   const emptyState = document.getElementById('emptyState');
   const cardGrid = document.getElementById('cardGrid');
 
+
   const clientView = document.getElementById('clientView');
   const adminView = document.getElementById('adminView');
   const backToStoreLink = document.getElementById('backToStoreLink');
@@ -473,8 +551,58 @@
 
   /* =========================================================
      LANGUAGE SWITCH
+     ---------------------------------------------------------
+     The custom listbox (trigger button + option list) drives
+     the real, visually-hidden <select id="langSelect">, so this
+     is the only place that needs to know both exist.
   ========================================================= */
+  const langTrigger = document.getElementById('langTrigger');
+  const langList = document.getElementById('langList');
+  const langCurrent = document.getElementById('langCurrent');
+  const langOptions = langList ? Array.from(langList.querySelectorAll('.lang-switch__option')) : [];
+
+  function closeLangList() {
+    langList.classList.add('is-hidden');
+    langTrigger.setAttribute('aria-expanded', 'false');
+  }
+  function openLangList() {
+    langList.classList.remove('is-hidden');
+    langTrigger.setAttribute('aria-expanded', 'true');
+  }
+  function syncLangUI(code) {
+    const opt = langOptions.find((o) => o.getAttribute('data-lang') === code) || langOptions[0];
+    if (!opt) return;
+    langOptions.forEach((o) => {
+      o.classList.toggle('is-selected', o === opt);
+      o.setAttribute('aria-selected', o === opt ? 'true' : 'false');
+    });
+    langCurrent.textContent = opt.getAttribute('data-label');
+  }
+  function selectLang(code) {
+    syncLangUI(code);
+    langSelect.value = code;
+    langSelect.dispatchEvent(new Event('change'));
+  }
+
+  langTrigger.addEventListener('click', () => {
+    langList.classList.contains('is-hidden') ? openLangList() : closeLangList();
+  });
+  langOptions.forEach((opt) => {
+    opt.addEventListener('click', () => {
+      selectLang(opt.getAttribute('data-lang'));
+      closeLangList();
+      langTrigger.focus();
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!document.getElementById('langSwitch').contains(e.target)) closeLangList();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLangList();
+  });
+
   langSelect.value = state.lang;
+  syncLangUI(state.lang);
   langSelect.addEventListener('change', () => {
     state.lang = langSelect.value;
     localStorage.setItem(STORAGE_KEYS.lang, state.lang);
@@ -869,7 +997,7 @@
 <!-- Locks this preview into its own sealed box: without this,
      any relative link/src/url() inside the template's own
      HTML/CSS/JS (e.g. href="style.css", url(logo.png)) would
-     resolve against the REAL Marketa site's URL — silently
+     resolve against the REAL WebLy site's URL — silently
      pulling in the real site's stylesheet/scripts/images and
      making the preview look "like the main site". Pointing the
      base at a domain that can never exist means every relative
@@ -949,7 +1077,7 @@ ${tpl.html || ''}
 
   function buildCardMarkup() {
     const card = document.createElement('article');
-    card.className = 'card';
+    card.className = 'card reveal';
     card.innerHTML = `
       <div class="card__thumb" data-action="thumb" role="button" tabindex="0" aria-label="${t('card.preview')}">
         <div class="card__thumb-frame-wrap">
@@ -1059,6 +1187,7 @@ ${tpl.html || ''}
         const iframe = el.querySelector('.card__thumb-frame');
         iframe.__tpl = tpl;
         getThumbObserver().observe(iframe); // srcdoc is set lazily, once it's near the viewport
+        observeReveal(el);
         entry = { el, signature };
         cardElements.set(tpl.id, entry);
         updateCardContent(el, tpl, false);
@@ -1225,6 +1354,7 @@ ${tpl.html || ''}
     applyRoute();
     subscribeToTemplates();
     subscribeToContact();
+    document.querySelectorAll('.reveal').forEach(observeReveal);
   }
 
   init();

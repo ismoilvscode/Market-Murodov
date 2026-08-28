@@ -71,6 +71,30 @@
 
 html{ scroll-behavior: smooth; }
 
+/* =========================================================
+   LIGHTWEIGHT SCROLL-REVEAL
+   ---------------------------------------------------------
+   Cheap on purpose: a single shared IntersectionObserver (see
+   app.js) just toggles this class once per element and stops
+   watching it — no scroll-tied JS, no per-frame work, so it
+   stays smooth even on low-RAM phones. Only opacity/transform
+   are animated (GPU-composited, no layout/paint cost).
+========================================================= */
+.reveal{
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* anchor offset so #showcase / #portfolio / #orderSection don't
+   land directly under the sticky navbar when jumped to */
+.hero, .section{ scroll-margin-top: 68px; }
+
 body{
   margin: 0;
   font-family: var(--font-body);
@@ -168,25 +192,130 @@ body.is-admin-route .back-link{ display: inline-block; }
   50%{ box-shadow: 0 0 0 6px rgba(239,106,91,0.06); }
 }
 
-.lang-switch{
+/* =========================================================
+   LANGUAGE SWITCH
+   ---------------------------------------------------------
+   A custom listbox instead of the bare native <select> (whose
+   dropdown panel can't be styled and renders with the OS/browser
+   default look). The real <select id="langSelect"> stays in the
+   DOM (visually hidden) so app.js's existing change-listener and
+   state.lang logic keep working untouched.
+========================================================= */
+.lang-switch{ position: relative; }
+.lang-switch__trigger{
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   background: var(--bg-light-alt);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-s);
-  padding: 6px 10px;
+  padding: 7px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
   transition: var(--ease);
 }
-.lang-switch:hover{ border-color: var(--accent); }
+.lang-switch__trigger:hover,
+.lang-switch__trigger[aria-expanded="true"]{
+  border-color: var(--accent);
+  color: var(--accent);
+}
 .lang-switch__icon{ font-size: 14px; }
-.lang-switch select{
-  border: none;
-  background: transparent;
-  font-size: 13px;
+.lang-switch__current{ white-space: nowrap; }
+.lang-switch__chevron{
+  font-size: 10px;
+  color: var(--text-dark-muted);
+  transition: transform 0.2s ease-out;
+}
+.lang-switch__trigger[aria-expanded="true"] .lang-switch__chevron{
+  transform: rotate(180deg);
+  color: var(--accent);
+}
+
+.lang-switch__list{
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 180px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: var(--bg-light-alt);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-mid);
+  z-index: 40;
+  transform-origin: top right;
+  transform: scale(0.96) translateY(-4px);
+  opacity: 0;
+  transition: transform 0.16s cubic-bezier(.22,.9,.32,1), opacity 0.16s ease-out;
+}
+.lang-switch__list.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.96) translateY(-4px);
+}
+.lang-switch__list:not(.is-hidden){
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+.lang-switch__option{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: var(--radius-s);
+  font-size: 13.5px;
   font-weight: 500;
   color: var(--text-dark);
-  outline: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease-out, color 0.15s ease-out;
+}
+.lang-switch__option:hover,
+.lang-switch__option.is-active{
+  background: rgba(91,141,239,0.12);
+  color: var(--accent);
+}
+.lang-switch__option.is-selected{ color: var(--accent); font-weight: 700; }
+.lang-switch__flag{
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-dark-muted);
+  background: rgba(var(--bg-light-rgb), 0.6);
+  border: 1px solid var(--border-light);
+  border-radius: 5px;
+  padding: 2px 5px;
+  min-width: 26px;
+  text-align: center;
+}
+.lang-switch__option:hover .lang-switch__flag,
+.lang-switch__option.is-selected .lang-switch__flag{
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
+.lang-switch__option span:nth-child(2){ flex: 1; white-space: nowrap; }
+.lang-switch__check{
+  font-size: 12px;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+.lang-switch__option.is-selected .lang-switch__check{ opacity: 1; }
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* =========================================================
@@ -215,14 +344,74 @@ body.is-admin-route .back-link{ display: inline-block; }
   font-weight: 700;
   letter-spacing: -0.02em;
   margin: 0 0 20px;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.10), 0 1px 0 rgba(255,255,255,0.4);
 }
-.hero__title--accent{ color: var(--accent); }
+.hero__title--accent{ color: var(--accent); text-shadow: 0 2px 18px rgba(91,141,239,0.25); }
 .hero__subtitle{
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-dark-muted);
   max-width: 560px;
   margin: 0 auto;
+}
+.hero__eyebrow{
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   HERO CTAs — two big buttons, like big storefronts.
+   ---------------------------------------------------------
+   The hover "3D" tilt is a single static CSS transform swap
+   (perspective + rotateX), composited on the GPU and only
+   active on the element under the cursor — cheap enough for a
+   2GB-RAM phone, unlike JS mousemove-tracking tilt effects.
+========================================================= */
+.hero__ctas{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 34px;
+}
+.btn-hero{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 30px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-m);
+  transform: perspective(600px) rotateX(0deg) translateY(0);
+  transition: transform 0.25s cubic-bezier(.22,.9,.32,1), box-shadow 0.25s ease-out, border-color 0.25s ease-out, background-color 0.25s ease-out, color 0.25s ease-out;
+  will-change: transform;
+}
+.btn-hero--primary{
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 10px 26px rgba(91,141,239,0.32);
+}
+.btn-hero--primary:hover{
+  background: #4A79D6;
+  transform: perspective(600px) rotateX(6deg) translateY(-4px);
+  box-shadow: 0 18px 36px rgba(91,141,239,0.42);
+}
+.btn-hero--ghost{
+  background: var(--bg-light-alt);
+  border: 1px solid var(--border-light);
+  color: var(--text-dark);
+  box-shadow: var(--shadow-soft);
+}
+.btn-hero--ghost:hover{
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: perspective(600px) rotateX(6deg) translateY(-4px);
+  box-shadow: var(--shadow-mid);
+}
+.btn-hero:active{
+  transform: perspective(600px) rotateX(0deg) translateY(-1px);
 }
 
 /* =========================================================
@@ -319,6 +508,10 @@ body.is-admin-route .back-link{ display: inline-block; }
   grid-template-columns: 300px 1fr;
   gap: 22px;
   align-items: start;
+  margin-bottom: 22px;
+}
+.console-grid--single{
+  grid-template-columns: 1fr;
 }
 .console-card{
   background: var(--bg-dark-alt);
@@ -642,6 +835,156 @@ body.is-admin-route .back-link{ display: inline-block; }
   line-height: 1.55;
 }
 .empty-state.is-hidden{ display: none; }
+
+.empty-state--dark{
+  background: var(--bg-dark-alt);
+  border-color: var(--border-dark);
+}
+.empty-state--dark .empty-state__title{ color: var(--text-light); }
+.empty-state--dark .empty-state__text{ color: var(--text-light-muted); }
+
+/* =========================================================
+   3D SCENE MOUNTS (hero + about) — a fullscreen absolute
+   <canvas> that scene3d.js drops a three.js renderer into.
+   Sits behind the section content and never intercepts clicks.
+========================================================= */
+.hero, .about-section{ position: relative; overflow: hidden; }
+.hero__inner{ position: relative; z-index: 2; }
+.about-section__inner{ position: relative; z-index: 2; }
+.scene3d{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.scene3d canvas{ display: block; width: 100%; height: 100%; }
+
+/* Respect reduced-motion: hide the animated scenes entirely,
+   scene3d.js also checks this before starting the render loop. */
+@media (prefers-reduced-motion: reduce){
+  .scene3d{ display: none; }
+}
+
+/* =========================================================
+   ABOUT ME
+   ---------------------------------------------------------
+   Static bio content (this app has one designer/operator —
+   no admin-managed list needed here, unlike the storefront).
+========================================================= */
+.about-grid{
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 26px;
+  perspective: 1100px;
+}
+@media (max-width: 760px){
+  .about-grid{ grid-template-columns: 1fr; }
+}
+.about-card{
+  background: var(--bg-dark-alt);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-m);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-dark);
+}
+.about-card__avatar{
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+  margin-bottom: 18px;
+  animation: floatY 5s ease-in-out infinite;
+}
+.about-card__name{
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-light);
+  margin: 0 0 4px;
+}
+.about-card__role{
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  margin: 0 0 16px;
+}
+.about-card__bio{
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-light-muted);
+  margin: 0 0 20px;
+}
+.about-card__tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.about-tag{
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  background: rgba(242,169,59,0.12);
+  border: 1px solid rgba(242,169,59,0.30);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.about-stats{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.about-stat{
+  background: var(--bg-dark-alt);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-m);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-dark);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-stat__num{
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.about-stat__label{
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-light-muted);
+}
+
+/* =========================================================
+   TILT CARDS — continuous, gentle 3D response to the cursor
+   (or device orientation on mobile), applied by scene3d.js.
+   Pure CSS transform on a GPU layer, cheap to animate.
+========================================================= */
+.tilt-card{
+  transform-style: preserve-3d;
+  transition: transform 0.18s ease-out, border-color 0.25s ease-out;
+  will-change: transform;
+}
+.tilt-card:hover{ border-color: var(--accent-dim); }
+
+/* Gentle infinite float used across small 3D accents */
+@keyframes floatY{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-8px); }
+}
 
 /* =========================================================
    SHOWCASE — CARD GRID
